@@ -1,0 +1,3 @@
+https://api.poe.watch/get?category=currency&league=Ritual
+http://api.pathofexile.com/public-stash-tabs
+https://poe.ninja/api/data/currencyoverview?league=Ritual&type=Currency
