@@ -1,5 +1,4 @@
-﻿
-namespace BotTrader
+﻿namespace BotTrader
 {
     partial class Interface
     {
@@ -27,7 +26,7 @@ namespace BotTrader
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Interface));
             this.StartBot = new System.Windows.Forms.Button();
@@ -55,20 +54,20 @@ namespace BotTrader
             resources.ApplyResources(this.StartBot, "StartBot");
             this.StartBot.Name = "StartBot";
             this.StartBot.UseVisualStyleBackColor = true;
+            this.StartBot.Click += new System.EventHandler(this.StartBot_Click);
             // 
             // StopBot
             // 
             this.StopBot.CausesValidation = false;
             resources.ApplyResources(this.StopBot, "StopBot");
             this.StopBot.Name = "StopBot";
-            this.StopBot.TabStop = false;
             this.StopBot.UseVisualStyleBackColor = true;
+            this.StopBot.Click += new System.EventHandler(this.StopBot_Click);
             // 
             // ConnectedAPI
             // 
             resources.ApplyResources(this.ConnectedAPI, "ConnectedAPI");
             this.ConnectedAPI.Name = "ConnectedAPI";
-            this.ConnectedAPI.Click += new System.EventHandler(this.label1_Click);
             // 
             // Logs
             // 
@@ -79,49 +78,42 @@ namespace BotTrader
             // 
             resources.ApplyResources(this.Game, "Game");
             this.Game.Name = "Game";
-            this.Game.Click += new System.EventHandler(this.Game_Click);
             // 
             // unCheck1
             // 
             resources.ApplyResources(this.unCheck1, "unCheck1");
             this.unCheck1.Name = "unCheck1";
             this.unCheck1.TabStop = false;
-            this.unCheck1.Click += new System.EventHandler(this.Check1_Click);
             // 
             // unCheck2
             // 
             resources.ApplyResources(this.unCheck2, "unCheck2");
             this.unCheck2.Name = "unCheck2";
             this.unCheck2.TabStop = false;
-            this.unCheck2.Click += new System.EventHandler(this.unCheck2_Click);
             // 
             // unCheck3
             // 
             resources.ApplyResources(this.unCheck3, "unCheck3");
             this.unCheck3.Name = "unCheck3";
             this.unCheck3.TabStop = false;
-            this.unCheck3.Click += new System.EventHandler(this.unCheck3_Click);
             // 
             // Check3
             // 
             resources.ApplyResources(this.Check3, "Check3");
             this.Check3.Name = "Check3";
             this.Check3.TabStop = false;
-            this.Check3.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Check2
             // 
             resources.ApplyResources(this.Check2, "Check2");
             this.Check2.Name = "Check2";
             this.Check2.TabStop = false;
-            this.Check2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Check1
             // 
             resources.ApplyResources(this.Check1, "Check1");
             this.Check1.Name = "Check1";
             this.Check1.TabStop = false;
-            this.Check1.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // Terminal
             // 
@@ -161,18 +153,19 @@ namespace BotTrader
 
         #endregion
 
-        private System.Windows.Forms.Button StartBot;
-        private System.Windows.Forms.Button StopBot;
-        private System.Windows.Forms.Label ConnectedAPI;
-        private System.Windows.Forms.Label Logs;
-        private System.Windows.Forms.Label Game;
-        private System.Windows.Forms.PictureBox unCheck1;
-        private System.Windows.Forms.PictureBox unCheck2;
-        private System.Windows.Forms.PictureBox unCheck3;
-        private System.Windows.Forms.PictureBox Check3;
-        private System.Windows.Forms.PictureBox Check2;
-        private System.Windows.Forms.PictureBox Check1;
-        private System.Windows.Forms.Label Terminal;
+        public System.Windows.Forms.Button StartBot;
+        public System.Windows.Forms.Button StopBot;
+        public System.Windows.Forms.Label ConnectedAPI;
+        public System.Windows.Forms.Label Logs;
+        public System.Windows.Forms.Label Game;
+        public System.Windows.Forms.PictureBox unCheck1;
+        public System.Windows.Forms.PictureBox unCheck2;
+        public System.Windows.Forms.PictureBox unCheck3;
+        public System.Windows.Forms.PictureBox Check3;
+        public System.Windows.Forms.PictureBox Check2;
+        public System.Windows.Forms.PictureBox Check1;
+        public System.Windows.Forms.Label Terminal;
+
     }
 }
 

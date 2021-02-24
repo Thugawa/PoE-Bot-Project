@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using PoETradeBot.Services;
@@ -20,70 +13,24 @@ namespace BotTrader
             InitializeComponent();
         }
 
+
         private void Interface_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void StartBot_Click(object sender, EventArgs e)
         {
-
+            unCheck3.Visible = false;
+            Check3.Visible = true;
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void StopBot_Click(object sender, EventArgs e)
         {
-
+            unCheck3.Visible = true;
+            Check3.Visible = false;
         }
 
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Game_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Check1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void unCheck2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void unCheck3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
     public class Bot
@@ -92,9 +39,9 @@ namespace BotTrader
         private static string PoE_Logs_Dir;
         private static string PoE_Logs_File;
 
-        public Bot()
+        public void Path()
         {
-            //Check if the Path of Exile isn't Steam
+            //Assume if the Path of Exile isn't Steam
             var path = Registry.GetValue(@"HKEY_CURRENT_USER\Software\GGG\Path of Exile", "InstallLocationn", null);
             if (path != null)
             {
@@ -105,7 +52,7 @@ namespace BotTrader
             }
             else
             {
-                //Check if the Path of Exile is Steam
+                //Assume if the Path of Exile is Steam
                 path = (@"C:\Program Files (x86)\Steam\steamapps\common\Path of Exile");
                 PoE_Path = path.ToString();
                 PoE_Logs_Dir = PoE_Path + @"\logs";
@@ -116,16 +63,12 @@ namespace BotTrader
             if (!Win32.IsPoERun())
             {
                 Console.WriteLine("Path of Exile isnot Running");
-                button1.Enabled = true;
+                unCheck3.Visible = false;
             }
             else
             {
                 Console.WriteLine("Path of Exile is Running");
             }
-        }
-        public void Start()
-        {
-
         }
     }
 }
